@@ -1,0 +1,24 @@
+consulta estandar para seleccionartodoslos camposde una tabla:
+
+-SELECT * FROM piezas
+
+consulta personalizada que devuelve un campo especifico de una tabla:
+
+-SELECT piezas.nombre FROM piezas
+
+podemos concatenar nombres de los campos para sacar varios en la consulta separandolos por comas:
+
+-SELECT piezas.nombre, piezas.precio FROM piezas
+
+consulta personalizada que nos mostraria los objetos que no tienen precio:
+
+-SELECT * FROM piezas WHERE precio IS NULL
+
+Mostrar las distintasciudades donde se encuentran nuestras piezas:
+
+SELECT DISTINCT ciudad FROM piezas WHERE ciudad IS NOT NULL
+
+Mostrar las ID entre 2 y 9:
+
+-SELECT * FROM piezas WHERE id BETWEEN 2 AND 9
+
