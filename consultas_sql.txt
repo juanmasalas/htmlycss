@@ -22,3 +22,4 @@ Mostrar las ID entre 2 y 9:
 
 -SELECT * FROM piezas WHERE id BETWEEN 2 AND 9
 
+*/ estuve investigando las subconsultas pero no las entendia bien y noconsegui que me saliera ninguna correcta
