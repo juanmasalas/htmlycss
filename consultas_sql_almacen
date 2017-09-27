@@ -16,3 +16,8 @@ SELECT DISTINCT ciudad
 FROM s
 WHERE ciudad NOT IN (SELECT ciudad FROM p);
 
+- 4 - datos de los proveedores que envian la pieza P1 y cantidad que envian
+
+SELECT s.*, cant
+FROM s,sp
+WHERE s.sn=sp.sn AND pn='p1';
