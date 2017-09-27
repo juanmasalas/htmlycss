@@ -52,3 +52,14 @@ WHERE UPPER(pnombre) LIKE 'P*';
 c. SELECT DISTINCT pnombre
 FROM P
 WHERE LOWER(pnombre) LIKE 'p*';
+
+- 8 -	Nombre y cantidad de todas las piezas enviadas por el proveedor con código  S3.
+
+a.	
+SELECT pnombre, cant 
+FROM SP, P
+WHERE SP.pn = P.pn AND SP.sn='S3';	
+
+b.	
+SELECT pnombre, cant
+FROM SP INNER JOIN P ON SP.pn = P.pn WHERE SP.sn='S3';
