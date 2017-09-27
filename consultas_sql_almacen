@@ -1,6 +1,18 @@
-Piezas rojas con peso mayor a 15
+- 1 - Piezas rojas con peso mayor a 15
 
 SELECT * 
 FROM p
 WHERE color = 'rojo' AND peso > 15;
+
+- 2 - ciudades en las que hay proveedores y se almacena alguna pieza
+
+SELECT DISTINCT ciudad
+FROM s
+WHERE ciudad IN (SELECT ciudad FROM p);
+
+- 3 - ciudades en las que hay proveedores y no se almacenan piezas
+
+SELECT DISTINCT ciudad
+FROM s
+WHERE ciudad NOT IN (SELECT ciudad FROM p);
 
