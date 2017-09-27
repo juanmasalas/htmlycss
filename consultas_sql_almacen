@@ -86,3 +86,9 @@ SELECT pn, pnombre, color FROM P
 
 WHERE peso>12 AND (pnombre LIKE '*a' OR pnombre LIKE '*o') 
 ORDER BY color ASC, peso DESC;
+
+- 13 -	¿Cuántos tipos de piezas suministra el proveedor S2?
+SELECT COUNT(pn) AS numpiezas
+FROM SP
+WHERE sn='S2';
+
