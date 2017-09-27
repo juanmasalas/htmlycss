@@ -1,0 +1,6 @@
+Piezas rojas con peso mayor a 15
+
+SELECT * 
+FROM p
+WHERE color = 'rojo' AND peso > 15;
+
