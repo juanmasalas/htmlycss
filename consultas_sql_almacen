@@ -80,3 +80,9 @@ GROUP BY sn;
 - 11 -	Número medio de unidades suministradas por envío.
 SELECT AVG(cant) AS “Media” 
 FROM SP ;
+
+- 12 - Listado de las piezas cuyo peso supera las 12 unidades y cuyo nombre termina por la letra „o‟ ó por la letra „a‟. De cada pieza hay que mostrar su número, su nombre y su color. El listado debe aparecer ordenado por el color. Las que sean del mismo color deben salir ordenadas por peso descendentemente.
+SELECT pn, pnombre, color FROM P
+
+WHERE peso>12 AND (pnombre LIKE '*a' OR pnombre LIKE '*o') 
+ORDER BY color ASC, peso DESC;
