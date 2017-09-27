@@ -63,3 +63,20 @@ WHERE SP.pn = P.pn AND SP.sn='S3';
 b.	
 SELECT pnombre, cant
 FROM SP INNER JOIN P ON SP.pn = P.pn WHERE SP.sn='S3';
+
+- 9 -	Nombre de las piezas de color rojo suministradas por los proveedores de la ciudad de Londres.
+
+SELECT DISTINCT pnombre 
+FROM SP , S , P
+WHERE SP.sn = S.sn AND SP.pn = P.pn AND P.color = 'rojo' AND S.ciudad = 'Londres';
+
+
+- 10 -	Número total de unidades de piezas suministradas por cada proveedor.
+
+SELECT sn AS “Proveedor”, SUM(cant) AS “Total” FROM SP
+GROUP BY sn;
+
+
+- 11 -	Número medio de unidades suministradas por envío.
+SELECT AVG(cant) AS “Media” 
+FROM SP ;
