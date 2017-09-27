@@ -21,3 +21,13 @@ WHERE ciudad NOT IN (SELECT ciudad FROM p);
 SELECT s.*, cant
 FROM s,sp
 WHERE s.sn=sp.sn AND pn='p1';
+
+- 5 -	Nombre de los proveedores que suministran la pieza con código P2, ordenados alfabéticamente.
+
+a.	SELECT DISTINCT snombre FROM SP , S
+WHERE SP.sn = S.sn AND pn='P2'
+ORDER BY snombre;	
+
+b.	SELECT DISTINCT snombre
+FROM SP INNER JOIN S ON SP.sn = S.sn WHERE pn='P2'
+ORDER BY snombre;
