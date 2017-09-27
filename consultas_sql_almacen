@@ -38,3 +38,17 @@ SELECT DISTINCT snombre
 FROM SP , S , P
 WHERE SP.sn = S.sn AND SP.pn = P.pn AND P.color = 'rojo';
 
+- 7 -	Nombre de todas las piezas que empiecen por “P”.
+
+a.  
+SELECT DISTINCT pnombre
+FROM P
+WHERE pnombre LIKE 'p*';
+
+b. SELECT DISTINCT pnombre
+FROM P	
+WHERE UPPER(pnombre) LIKE 'P*';	
+
+c. SELECT DISTINCT pnombre
+FROM P
+WHERE LOWER(pnombre) LIKE 'p*';
