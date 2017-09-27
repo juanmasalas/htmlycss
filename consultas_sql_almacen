@@ -31,3 +31,10 @@ ORDER BY snombre;
 b.	SELECT DISTINCT snombre
 FROM SP INNER JOIN S ON SP.sn = S.sn WHERE pn='P2'
 ORDER BY snombre;
+
+- 6 -	Nombre de los proveedores que suministran por lo menos una pieza  roja
+
+SELECT DISTINCT snombre 
+FROM SP , S , P
+WHERE SP.sn = S.sn AND SP.pn = P.pn AND P.color = 'rojo';
+
