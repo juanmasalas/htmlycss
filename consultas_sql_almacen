@@ -92,3 +92,7 @@ SELECT COUNT(pn) AS numpiezas
 FROM SP
 WHERE sn='S2';
 
+
+- 14 - 	¿Cuántos proveedores suministran la pieza P2?
+SELECT COUNT(sn) AS numproveedores FROM SP
+WHERE pn='P2';
