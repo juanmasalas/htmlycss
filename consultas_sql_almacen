@@ -104,3 +104,7 @@ WHERE pn='P2';
 - 15- 	¿En cuántas ciudades se almacenan piezas?
 
 SELECT COUNT (DISTINCT(ciudad)) AS “Nº ciudades” FROM P;
+
+- 16 -	¿De cuántos colores tenemos piezas?
+
+SELECT COUNT (DISTINCT(color)) AS “Nº colores” FROM P;
