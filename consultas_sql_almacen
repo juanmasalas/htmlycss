@@ -78,21 +78,29 @@ GROUP BY sn;
 
 
 - 11 -	Número medio de unidades suministradas por envío.
+
 SELECT AVG(cant) AS “Media” 
 FROM SP ;
 
 - 12 - Listado de las piezas cuyo peso supera las 12 unidades y cuyo nombre termina por la letra „o‟ ó por la letra „a‟. De cada pieza hay que mostrar su número, su nombre y su color. El listado debe aparecer ordenado por el color. Las que sean del mismo color deben salir ordenadas por peso descendentemente.
-SELECT pn, pnombre, color FROM P
 
+SELECT pn, pnombre, color FROM P
 WHERE peso>12 AND (pnombre LIKE '*a' OR pnombre LIKE '*o') 
 ORDER BY color ASC, peso DESC;
 
 - 13 -	¿Cuántos tipos de piezas suministra el proveedor S2?
+
 SELECT COUNT(pn) AS numpiezas
 FROM SP
 WHERE sn='S2';
 
 
 - 14 - 	¿Cuántos proveedores suministran la pieza P2?
+
 SELECT COUNT(sn) AS numproveedores FROM SP
 WHERE pn='P2';
+
+
+- 15- 	¿En cuántas ciudades se almacenan piezas?
+
+SELECT COUNT (DISTINCT(ciudad)) AS “Nº ciudades” FROM P;
