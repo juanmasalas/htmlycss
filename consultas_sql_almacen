@@ -113,3 +113,8 @@ SELECT COUNT (DISTINCT(color)) AS “Nº colores” FROM P;
 
 SELECT COUNT(pn) AS piezas_rojas FROM P
 WHERE color='rojo';
+
+
+- 18 -	¿Cuántos proveedores hay en la base de datos?
+
+SELECT COUNT(*) AS numproveedores FROM S;
