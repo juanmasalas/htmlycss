@@ -132,3 +132,11 @@ SELECT MAX(peso) AS peso_max, MIN(peso) AS peso_min FROM P;
 
 SELECT AVG(cant) AS media_envios FROM SP
 WHERE sn='S1' AND pn NOT IN ('P1', 'P2');
+
+- 22 - 	¿Cuál es el nombre de la pieza más pesada?
+
+SELECT pnombre AS mas_pesada
+FROM P
+WHERE peso = (SELECT MAX(peso) FROM P);	SELECT pnombre AS mas_pesada
+FROM P
+WHERE peso >= ALL  (SELECT peso FROM P);
