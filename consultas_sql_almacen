@@ -126,3 +126,9 @@ SELECT COUNT (DISTINCT(sn)) AS “Nº proveedores” FROM SP;
 - 20 -	Muestra el peso de la pieza más pesada y el de la más ligera.
 
 SELECT MAX(peso) AS peso_max, MIN(peso) AS peso_min FROM P;
+
+
+- 21 -	¿Cuál es la cantidad media de los envíos del proveedor S1, sin tener en cuenta los de las piezas P1 y P2?
+
+SELECT AVG(cant) AS media_envios FROM SP
+WHERE sn='S1' AND pn NOT IN ('P1', 'P2');
