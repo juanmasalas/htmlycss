@@ -154,3 +154,7 @@ WHERE cant <= ALL  (SELECT cant FROM SP);
 SELECT snombre FROM S
 WHERE estado > (SELECT AVG(estado) FROM S);
 
+- 25 -	Muestra la cantidad media por envío de cada pieza
+
+SELECT pn AS pieza, AVG(cant) AS media_envio FROM SP
+GROUP BY pn;
