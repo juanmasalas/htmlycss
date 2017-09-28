@@ -140,3 +140,11 @@ FROM P
 WHERE peso = (SELECT MAX(peso) FROM P);	SELECT pnombre AS mas_pesada
 FROM P
 WHERE peso >= ALL  (SELECT peso FROM P);
+
+- 23 -	Muestra los datos de los envíos de menor cantidad.
+
+SELECT *
+FROM SP
+WHERE cant = (SELECT MIN(cant) FROM SP);	SELECT *
+FROM SP
+WHERE cant <= ALL  (SELECT cant FROM SP);
