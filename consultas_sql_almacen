@@ -158,3 +158,14 @@ WHERE estado > (SELECT AVG(estado) FROM S);
 
 SELECT pn AS pieza, AVG(cant) AS media_envio FROM SP
 GROUP BY pn;
+
+- 26 -	Muestra la cantidad media por envío realizada por cada proveedor.
+
+SELECT sn AS proveedor, AVG(cant) AS media_envio FROM SP
+GROUP BY sn;
+
+- 27 -	Muestra la cantidad media por envío de aquellos proveedores que realizan más de dos envíos.
+
+SELECT sn AS proveedor, AVG(cant) AS media_envio FROM SP
+GROUP BY sn
+HAVING COUNT(sn)>2;
