@@ -123,3 +123,6 @@ SELECT COUNT(*) AS numproveedores FROM S;
 
 SELECT COUNT (DISTINCT(sn)) AS “Nº proveedores” FROM SP;
 
+- 20 -	Muestra el peso de la pieza más pesada y el de la más ligera.
+
+SELECT MAX(peso) AS peso_max, MIN(peso) AS peso_min FROM P;
