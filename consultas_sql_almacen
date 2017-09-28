@@ -118,3 +118,8 @@ WHERE color='rojo';
 - 18 -	¿Cuántos proveedores hay en la base de datos?
 
 SELECT COUNT(*) AS numproveedores FROM S;
+
+- 19 -	¿Cuántos proveedores realizan suministros de piezas?
+
+SELECT COUNT (DISTINCT(sn)) AS “Nº proveedores” FROM SP;
+
