@@ -108,3 +108,8 @@ SELECT COUNT (DISTINCT(ciudad)) AS “Nº ciudades” FROM P;
 - 16 -	¿De cuántos colores tenemos piezas?
 
 SELECT COUNT (DISTINCT(color)) AS “Nº colores” FROM P;
+
+- 17 -	¿Cuántas piezas son rojas?
+
+SELECT COUNT(pn) AS piezas_rojas FROM P
+WHERE color='rojo';
