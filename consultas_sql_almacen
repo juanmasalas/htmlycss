@@ -169,3 +169,8 @@ GROUP BY sn;
 SELECT sn AS proveedor, AVG(cant) AS media_envio FROM SP
 GROUP BY sn
 HAVING COUNT(sn)>2;
+
+- 28 -	Para cada ciudad en la que se almacenan piezas, obtener el número de piezas que se almacenan de cada color distinto.
+
+SELECT ciudad, color, COUNT(*) AS numpiezas FROM P
+GROUP BY ciudad, color;
