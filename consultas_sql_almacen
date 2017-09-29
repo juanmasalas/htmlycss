@@ -180,3 +180,25 @@ GROUP BY ciudad, color;
 SELECT sn AS proveedores FROM SP
 GROUP BY sn
 HAVING COUNT(*) = (SELECT COUNT(*) FROM P);
+
+- 30 -	Obtener el código de los proveedores que suministran alguna de las piezas suministradas por el proveedor  S2.
+
+a.	
+
+SELECT DISTINCT sp1.sn AS proveedores
+FROM SP AS sp1, SP AS sp2
+WHERE sp2.sn='S2' AND sp1.pn=sp2.pn;	
+
+b.
+
+SELECT DISTINCT sn
+FROM SP
+WHERE pn = ANY (  SELECT DISTINCT pn
+FROM SP
+WHERE sn = 'S2' )
+
+c.
+
+SELECT DISTINCT sn FROM SP
+WHERE pn IN ( SELECT pn FROM SP
+WHERE sn='S2');		
