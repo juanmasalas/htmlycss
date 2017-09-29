@@ -174,3 +174,9 @@ HAVING COUNT(sn)>2;
 
 SELECT ciudad, color, COUNT(*) AS numpiezas FROM P
 GROUP BY ciudad, color;
+
+- 29 -	Listado de los proveedores que suministran todas las piezas (sólo el código del proveedor).
+
+SELECT sn AS proveedores FROM SP
+GROUP BY sn
+HAVING COUNT(*) = (SELECT COUNT(*) FROM P);
