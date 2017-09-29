@@ -218,3 +218,11 @@ FROM SP
 WHERE pn IN (SELECT pn FROM SP WHERE sn='S2') GROUP BY sn
 HAVING COUNT(*) = ( SELECT COUNT(*)
 FROM  SP WHERE sn='S2');
+
+- 32 -	Obtener el código de los proveedores que suministran, al menos, todas las piezas que se almacenan en la ciudad de Londres.
+
+SELECT sn FROM SP, P
+WHERE P.pn=SP.pn AND ciudad='Londres' GROUP BY sn
+HAVING COUNT(*) = ( SELECT COUNT(*)
+FROM P
+WHERE ciudad = 'Londres') ;
