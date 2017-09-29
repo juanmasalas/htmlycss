@@ -254,3 +254,9 @@ SELECT DISTINCT snombre FROM S
 WHERE sn NOT IN ( SELECT sn
 FROM SP, P
 WHERE SP.pn=P.pn AND color='verde' );
+
+
+37.	Obtener el nombre de las piezas de color rojo suministradas por los proveedores de la ciudad de Londres.
+
+SELECT DISTINCT pnombre FROM S, P, SP
+WHERE S.sn=SP.sn AND P.pn=SP.pn AND P.color='rojo' AND S.ciudad='Londres';
