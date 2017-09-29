@@ -260,3 +260,19 @@ WHERE SP.pn=P.pn AND color='verde' );
 
 SELECT DISTINCT pnombre FROM S, P, SP
 WHERE S.sn=SP.sn AND P.pn=SP.pn AND P.color='rojo' AND S.ciudad='Londres';
+
+- 38 -	Nombre y código de los proveedores que no suministran la pieza con el código P1
+
+a.
+
+SELECT sn, snombre
+FROM S
+WHERE sn <> ALL ( SELECT sn
+FROM SP
+WHERE SP.pn='P1' );	
+
+b.	SELECT sn, snombre
+FROM S
+WHERE sn NOT IN ( SELECT sn
+FROM SP
+WHERE SP.pn='P1' );
