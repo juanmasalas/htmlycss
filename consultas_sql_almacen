@@ -234,3 +234,12 @@ SELECT S.sn, S.snombre AS nombre, S.estado FROM S, SP AS sp1, SP AS sp2
 WHERE S.sn=sp1.sn AND sp2.sn='S2' AND sp1.pn=sp2.pn GROUP BY S.sn, snombre, estado
 HAVING COUNT(*) = ( SELECT COUNT(*)
 FROM  SP WHERE sn='S2');
+
+- 34 -	Obtener el nombre y la ciudad de los proveedores que suministran, al menos, todas las piezas que se almacenan en la ciudad de Londres.
+
+SELECT S.sn, S.snombre, S.ciudad FROM S, SP, P
+WHERE S.sn=SP.sn AND P.pn=SP.pn AND P.ciudad='Londres' GROUP BY S.sn, S.snombre, S.ciudad
+HAVING COUNT(*) = ( SELECT COUNT(*)
+FROM P
+WHERE ciudad = 'Londres');
+
