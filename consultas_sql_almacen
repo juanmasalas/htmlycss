@@ -202,3 +202,19 @@ c.
 SELECT DISTINCT sn FROM SP
 WHERE pn IN ( SELECT pn FROM SP
 WHERE sn='S2');		
+
+
+- 31 -	Obtener el código de los proveedores que suministran, al menos, todas las piezas suministradas el proveedor   S2.
+
+
+SELECT sp1.sn AS proveedores
+FROM SP AS sp1, SP AS sp2
+WHERE sp2.sn='S2' AND sp1.pn=sp2.pn GROUP BY sp1.sn
+HAVING COUNT(*) = (  SELECT COUNT(*)
+FROM  SP WHERE sn='S2');
+
+SELECT sn AS proveedores
+FROM SP
+WHERE pn IN (SELECT pn FROM SP WHERE sn='S2') GROUP BY sn
+HAVING COUNT(*) = ( SELECT COUNT(*)
+FROM  SP WHERE sn='S2');
