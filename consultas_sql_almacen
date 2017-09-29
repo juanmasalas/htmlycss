@@ -271,8 +271,20 @@ WHERE sn <> ALL ( SELECT sn
 FROM SP
 WHERE SP.pn='P1' );	
 
-b.	SELECT sn, snombre
+b.	
+
+SELECT sn, snombre
 FROM S
 WHERE sn NOT IN ( SELECT sn
 FROM SP
 WHERE SP.pn='P1' );
+
+- 39 -	Datos de los proveedores que sólo suministran piezas de color rojo.
+
+
+SELECT * FROM S
+WHERE  sn  IN  ( SELECT sn
+FROM SP, P
+WHERE SP.pn=P.pn AND P.color='rojo' ) AND sn NOT IN ( SELECT sn
+FROM SP, P
+WHERE SP.pn=P.pn AND color<>'rojo' );
