@@ -247,3 +247,10 @@ WHERE ciudad = 'Londres');
 
 SELECT DISTINCT snombre FROM S, P, SP
 WHERE S.sn=SP.sn AND P.pn=SP.pn AND P.color='verde';
+
+- 36 -	Obtener el nombre de los proveedores que no suministran ninguna pieza  verde.
+
+SELECT DISTINCT snombre FROM S
+WHERE sn NOT IN ( SELECT sn
+FROM SP, P
+WHERE SP.pn=P.pn AND color='verde' );
