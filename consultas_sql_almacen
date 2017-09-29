@@ -226,3 +226,11 @@ WHERE P.pn=SP.pn AND ciudad='Londres' GROUP BY sn
 HAVING COUNT(*) = ( SELECT COUNT(*)
 FROM P
 WHERE ciudad = 'Londres') ;
+
+
+- 33 -	Obtener el nombre y el estado de los proveedores que suministran, al menos, todas las piezas suministradas por el proveedor S2.
+
+SELECT S.sn, S.snombre AS nombre, S.estado FROM S, SP AS sp1, SP AS sp2
+WHERE S.sn=sp1.sn AND sp2.sn='S2' AND sp1.pn=sp2.pn GROUP BY S.sn, snombre, estado
+HAVING COUNT(*) = ( SELECT COUNT(*)
+FROM  SP WHERE sn='S2');
