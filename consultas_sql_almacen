@@ -243,3 +243,7 @@ HAVING COUNT(*) = ( SELECT COUNT(*)
 FROM P
 WHERE ciudad = 'Londres');
 
+- 35 -	Obtener el nombre de los proveedores que suministran alguna pieza  verde.
+
+SELECT DISTINCT snombre FROM S, P, SP
+WHERE S.sn=SP.sn AND P.pn=SP.pn AND P.color='verde';
